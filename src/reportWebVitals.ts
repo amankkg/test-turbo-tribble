@@ -1,15 +1,15 @@
-import { ReportHandler } from 'web-vitals';
+import {ReportHandler} from 'web-vitals'
 
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
+    import('web-vitals').then((checks) => {
+      checks.getCLS(onPerfEntry)
+      checks.getFID(onPerfEntry)
+      checks.getFCP(onPerfEntry)
+      checks.getLCP(onPerfEntry)
+      checks.getTTFB(onPerfEntry)
+    })
   }
-};
+}
 
-export default reportWebVitals;
+export default reportWebVitals
